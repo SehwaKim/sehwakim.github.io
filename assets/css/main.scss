@@ -1,6 +1,15 @@
 ---
-# Use a comment to ensure Jekyll reads the file to be transformed into CSS later
-# only main files contain this front matter, not partials.
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
+@charset "utf-8";
 
-@import "hydeout";
+
+// Import partials from `sass_dir` (defaults to `assets/_sass`)
+@import
+  "normalize",
+  "variables",
+  "base",
+  "layout",
+  "media-queries",
+  "syntax-highlighting"
+;
