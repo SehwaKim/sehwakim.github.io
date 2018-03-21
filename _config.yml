@@ -22,9 +22,8 @@ permalink: none
 plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
 
 # Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title: Hello World
-description: 프로그래밍 메모장
-author: 김세화
+title: 'Hello World'
+description: '프로그래밍 메모장'
 
 # RSS 2.0 can be used instead of Atom by uncommenting following two lines
 #feed:
