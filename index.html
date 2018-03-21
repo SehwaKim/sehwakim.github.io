@@ -19,12 +19,11 @@ excerpt:
                     </div>
                     <h1 itemprop="name" class="title-text">{{ site.author.name }}</h1>
                     {% include info/follow-me.html %}
-                    <p><a class="social-link blog" title="Visit My Blog" itemprop="sameAs" href="/blog" target="_self">블로그를 방문하려면 클릭</a></p>
+                    <p><a class="social-link blog" title="블로그를 방문하려면 클릭" itemprop="sameAs" href="/blog" target="_self">블로그를 방문하려면 클릭</a></p>
                 </div>
             </div>
         </div>
         {% if site.isdebug == false %}
-            {% include utils/google-analytics.html %}
         {% endif %}
     </body>
 </html>
