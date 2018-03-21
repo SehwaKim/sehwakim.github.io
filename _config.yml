@@ -1,30 +1,74 @@
-# Site Build Settings
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Jekyll-paginate-v2 configuration
-#  pagination:
-#   enabled: true
-#   per_page: 5
-#   permalink: '/page/:num/'
-#   title: ':title - page :num of :max'
-#   limit: 0
-#   sort_field: 'date'
-#   sort_reverse: true
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.author }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Hello World
+author: sehwakim
+description: 프로그래밍 메모장
+baseurl: "/whiteglass" # the subpath of your site, e.g. /blog
+url: "https://sehwakim.github.io"
+lang: ko
+timezone: UTC
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - README.md
+  - LICENSE.txt
+  - CHANGELOG.md
+  - jekyll-whiteglass.gemspec
+  - screenshot.png
+  - vendor
 
-long: ko
+# Social media
+twitter_username:
+twitter_image:
+facebook_app_id:
+facebook_image:
+google_analytics:
+comments: false
 
-# jekyll-paginate configuration
-paginate: 5
+# Plugins
+plugins:
+  - jekyll-archives
+  - jekyll-paginate
+  - jekyll-sitemap
 
 # Build settings
 markdown: kramdown
-highlighter: rouge
-permalink: none
-plugins: [jekyll-paginate, jekyll-sitemap, jekyll-feed, jekyll-seo-tag]
+excerpt_separator: "<!-- more -->"
 
-# Customise atom feed settings (this is where Jekyll-Feed gets configuration information)
-title: 'Hello World'
-description: '프로그래밍 메모장'
+# Outputting
+permalink: /:year/:month/:day/:title/
+paginate_path: /posts/:num/
+paginate: 5
 
-# RSS 2.0 can be used instead of Atom by uncommenting following two lines
-#feed:
-#  path: rss-feed.xml
+# Markdown settings
+kramdown:
+  auto_ids: false
+  enable_coderay: false
+  entity_output: as_char
+  footnote_nr: 1
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  toc_levels: 1..6
+
+# jekyll-archives
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: category_archives
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
