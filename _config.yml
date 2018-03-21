@@ -1,0 +1,99 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+#
+# ,--------.      ,--.   ,--. ,--.
+# '--.  .--',---.  \  `.'  /,-'  '-.
+#    |  |  | .-. :  .'    \ '-.  .-'
+#    |  |  \   --. /  .'.  \  |  |
+#    `--'   `----''--'   '--' `--'
+
+## Base settings ##
+url:
+baseurl: /
+title: My Blog
+description: 
+
+nav_lists:
+  - titles:
+      en: About
+      zh: 
+      zh-Hans: 
+      zh-Hant: 
+    url: /blog/about.html
+
+paths:
+  base: /blog
+  home: /
+  all:  /blog/all.html
+  rss:  /feed.xml
+
+## GitHub repository (if the site is hosted by GitHub) ##
+repository: sehwakim/study
+repository_tree: develop
+
+## Language & timezone ##
+lang: ko
+timezone: 
+
+## Author & social ##
+author:
+  name: "S. H. Kim"
+  email: sehwakm@gmail.com
+  # facebook:  #your Facebook username
+  twitter: 
+  github:  sehwakim
+  googleplus: 
+  weibo: 
+  douban: 
+  # linkedin:  #your Linkedin username
+
+## Comment system (Disqus) ##
+disqus:
+  shortname: sehwakim-github-io
+
+## Google Analytics ##
+ga_tracking_id:
+
+# mathjax: true
+
+## Paginate ##
+paginate: 7
+paginate_path: /blog/page:num
+
+## Post excerpts ##
+excerpt_separator: <!--more-->
+excerpt_type: html # text | html
+
+## Build ##
+markdown: kramdown
+highlighter: rouge
+permalink: date
+
+exclude:
+  - CHANGELOG.md
+  - CHECKLIST.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README-*.md
+  - README.md
+  - gulpfile.js
+  - jekyll-text-theme.gemspec
+  - package-lock.json
+  - package.json
+  - /docs
+  - /node_modules
+  - /screenshots
+  - /test
+  - /vendor
+
+## Plugins ##
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jemoji

@@ -1,0 +1,30 @@
+---
+title: Tian Qi
+excerpt: Tian Qi | 田琦
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+    <head>
+        {% include common-head.html %}
+        {% include head-icons-rel.html %}
+        <link rel="stylesheet" href="{{ "/assets/css/home.css" | prepend: site.baseurl | replace:'//','/' }}">
+        <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="home" itemscope itemtype="http://schema.org/Person">
+            <div class="main">
+                <div class="content">
+                    <div class="my-photo">
+                        <img alt="my photo" src="https://pbs.twimg.com/profile_images/922297371219828736/kOSmgZx6_400x400.jpg" />
+                    </div>
+                    <h1 itemprop="name" class="title-text">{{ site.author.name }}</h1>
+                    {% include info/follow-me.html %}
+                    <p><a class="social-link blog" title="블로그를 방문하려면 클릭" itemprop="sameAs" href="/blog" target="_self">Visit My Blog</a></p>
+                </div>
+            </div>
+        </div>
+        {% if site.isdebug == false %}
+            {% include utils/google-analytics.html %}
+        {% endif %}
+    </body>
+</html>
