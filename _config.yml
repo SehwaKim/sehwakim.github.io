@@ -37,13 +37,13 @@ repository: kitian616/kitian616.github.io
 repository_tree: master
 
 ## Language & timezone ##
-lang: zh #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
+lang: ko
 timezone: Asia/Shanghai
 
 ## Author & social ##
 author:
-  name: "Tian Qi"
-  email: kitian616@outlook.com
+  name: "김세화"
+  email: sehwakm@gmail.com
   # facebook:  #your Facebook username
   twitter: kitian616
   github:  kitian616
