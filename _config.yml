@@ -1,88 +1,110 @@
+# Welcome to Jekyll!
 #
-# This file contains configuration flags to customize your site
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 #
+# ,--------.      ,--.   ,--. ,--.
+# '--.  .--',---.  \  `.'  /,-'  '-.
+#    |  |  | .-. :  .'    \ '-.  .-'
+#    |  |  \   --. /  .'.  \  |  |
+#    `--'   `----''--'   '--' `--'
 
-# Name of your site (displayed in the header)
-name: Hello World
+## Base settings ##
+url: https://tianqi.name #the base hostname & protocol for your site e.g. https://www.someone.com
+baseurl: /
+title: Qi's Blog
+description: > #this means to ignore newlines until "nav_lists:"
+    Tian Qi's Blog | 田琦的博客
 
-# Short bio or description (displayed in the header)
-description: programming study blog
+nav_lists:
+  - titles:
+      en: About
+      zh: 关于
+      zh-Hans: 关于
+      zh-Hant: 關於
+    url: /blog/about.html
 
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+paths:
+  base: /blog
+  home: /
+  all:  /blog/all.html
+  rss:  /feed.xml
 
-#
-# Flags below are optional
-#
+## GitHub repository (if the site is hosted by GitHub) ##
+repository: kitian616/kitian616.github.io
+repository_tree: master
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: sehwakim/study
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter:
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
+## Language & timezone ##
+lang: zh #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
+timezone: Asia/Shanghai
 
+## Author & social ##
+author:
+  name: "Tian Qi"
+  email: kitian616@outlook.com
+  # facebook:  #your Facebook username
+  twitter: kitian616
+  github:  kitian616
+  googleplus: 101827554735084402671
+  weibo: 234695683
+  douban: kitian616
+  # linkedin:  #your Linkedin username
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
+## Comment system (Disqus) ##
 disqus:
+  shortname: kitian616-github-io #the Disqus shortname for the site
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+## Google Analytics ##
+ga_tracking_id: UA-71907556-1 #Google analytics id for the site
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url:
+## Reading quantity (LeanCloud) ##
+leancloud:
+  app_id: uAG3OhdcH8H4fxSqXLyBljA7-gzGzoHsz
+  app_key: Mzf5m9skSwYVWVXhGiYMNyXs
+  app_class: ThomasBlog
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
+# mathjax: true
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
+## Paginate ##
+paginate: 7
+paginate_path: /blog/page:num
 
-permalink: /:title/
+## Post excerpts ##
+excerpt_separator: <!--more-->
+excerpt_type: html # text | html
 
-# The release of Jekyll Now that you're using
-version: v1.2.0
+## Build ##
+markdown: kramdown
+highlighter: rouge
+permalink: date
 
-# Jekyll 3 now only supports Kramdown for Markdown
-kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
-
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
-
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
-
-# Exclude these files from your production _site
 exclude:
+  - CHANGELOG.md
+  - CHECKLIST.md
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - README-*.md
   - README.md
-  - CNAME
+  - gulpfile.js
+  - jekyll-text-theme.gemspec
+  - package-lock.json
+  - package.json
+  - /docs
+  - /node_modules
+  - /screenshots
+  - /test
+  - /vendor
 
-encoding: "UTF-8"
+## Plugins ##
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+  - jemoji
+
+## Server ##
+server_url: "0.0.0.0"
+port: 4001
