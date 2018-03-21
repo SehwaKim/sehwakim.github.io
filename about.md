@@ -1,19 +1,17 @@
 ---
-bg: "owl.jpg"
-layout: page
-title: "About"
-crawlertitle: "Why and how this blog was created"
+title: About...
 permalink: /about/
-summary: "About this blog"
-active: about
+layout: default_post
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+## ..myself #
 
-You can find the source code for the Jekyll new theme at:
-{{site.twitter_username}} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+Hello there. How I’ve waited for you to come, Ive been here all alone. 
+Now that you've arrived. Please stay a while. And I promise I won't keep 
+you long. <style>a{color: #FFF;}a:hover{color: #f0f0f0;}.footer a{color: #800000;}</style>
+[_I'll keep you forever..._](https://youtu.be/vh1TsSaGlXQ?t=37s)
 
-You can find the source code for Jekyll at
-{{site.github_username}} /
-[jekyll](https://github.com/jekyll/jekyll)
+## ...this blog #
+
+I write this blog because I like to chant, rant and sometimes say things that I probably shan't.
+
