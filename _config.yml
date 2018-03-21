@@ -1,86 +1,44 @@
-## Base settings ##
-url:
-baseurl: /
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
 title: Hello World
-description: > #this means to ignore newlines until "nav_lists:"
+email: sehwakm@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+lang: "ko"
+url:
+twitter_username: 
+github_username:  sehwakim
+disqus_username:
 
-nav_lists:
-  - titles:
-      en: About
-      zh: 关于
-      zh-Hans: 关于
-      zh-Hant: 關於
-    url: /blog/about.html
-
-paths:
-  base: /blog
-  home: /
-  all:  /blog/all.html
-  rss:  /feed.xml
-
-## GitHub repository (if the site is hosted by GitHub) ##
-repository: sehwakim/study
-repository_tree: develop
-
-## Language & timezone ##
-lang: ko #the language of your site, eg: en(English), zh(简体中文), zh-Hans(简体中文), zh-Hant(繁體中文)
-timezone:
-
-## Author & social ##
-author:
-  name: "Sehwa Kim"
-  email: sehwakm@gmail.com
-  # facebook:  #your Facebook username
-  twitter:
-  github:  sehwakim
-  googleplus: 
-  weibo: 
-  douban: 
-  # linkedin:  #your Linkedin username
-
-## Comment system (Disqus) ##
-disqus:
-  shortname: sehwakim-github-io
-
-## Google Analytics ##
-ga_tracking_id: 
-
-# mathjax: true
-
-## Paginate ##
-paginate: 7
-paginate_path: /blog/page:num
-
-## Post excerpts ##
-excerpt_separator: <!--more-->
-excerpt_type: html # text | html
-
-## Build ##
+# Build settings
 markdown: kramdown
-highlighter: rouge
-permalink: date
+permalink: /:categories/:title/
 
-exclude:
-  - CHANGELOG.md
-  - CHECKLIST.md
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README-*.md
-  - README.md
-  - gulpfile.js
-  - jekyll-text-theme.gemspec
-  - package-lock.json
-  - package.json
-  - /docs
-  - /node_modules
-  - /screenshots
-  - /test
-  - /vendor
+# Posts settings
+future: true
+safe: false
+lsi: false
+excerpt_separator: "\n\n"
 
-## Plugins ##
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jemoji
+# Theme settings
+compress_html:
+  comments: ["<!-- ", " -->"]
+  clippings: all
+  endings: all
+
+
+sass:
+  sass_dir: assets/_sass
+  style: compressed
+
+
+images: '/assets/images'
