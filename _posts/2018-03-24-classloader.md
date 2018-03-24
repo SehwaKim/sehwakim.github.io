@@ -38,7 +38,7 @@ ex)
 String className = "Hello3"; ----> 클래스 이름이 이러할 때  
 Class clazz = Class.forName(className); ----> 이렇게 Class.forName이란 메소드의 인자값으로 클래스 이름을 주면 이 클래스로더 메소드는 className에 해당하는 클래스 정보를 읽어들여서 메모리에 올리고  
 해당 클래스 정보를 리턴한다. 그 값을 clazz라는 변수에 저장.  
-``
+```
 여기까지는 클래스의 정보를 가지고 온 것이고 인스턴스로 만드려면 clazz.newInstance() 메소드를 호출해야 한다.  
 클래스명이 Hello3 이라면 (Hello3)clazz.newInstance()로 형변환을 해주면 된다.  
   
