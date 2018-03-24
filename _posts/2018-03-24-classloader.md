@@ -34,9 +34,11 @@ picture_frame: shadow
 한 객체의 인스턴스를 만드는 방법에는 키워드 new를 이용한 방법만 있는 것이 아니다. 자바의 동적인 클래스 로드의 특징을 활용한 Class.forName이란 클래스로더를 이용할 수도 있다.  
 만약에 어떠한 클래스의 이름만 알고 있을 경우 그 클래스를 프로그래머가 클래스로더를 사용해서 동적으로 로드할 수 있다.  
 ex)  
-```String className = "Hello3"; ----> 클래스 이름이 이러할 때  
-Class clazz = Class.forName(className); ----> 이렇게 Class.forName이란 메소드의 인자값으로 클래스 이름을 주면 이 클래스로더 메소드는 className에 해당하는 클래스 정보를 읽어들여서 메모리에 올리고  
-해당 클래스 정보를 리턴한다. 그 값을 clazz라는 변수에 저장.```
+```String className = "Hello3";```   
+----> 클래스 이름이 이러할 때   
+```Class clazz = Class.forName(className);```   
+----> 이렇게 Class.forName이란 메소드의 인자값으로 클래스 이름을 주면 이 클래스로더 메소드는 className에 해당하는 클래스 정보를 읽어들여서 메모리에 올리고  
+해당 클래스 정보를 리턴한다. 그 값을 clazz라는 변수에 저장.
 
 여기까지는 클래스의 정보를 가지고 온 것이고 인스턴스로 만드려면 clazz.newInstance() 메소드를 호출해야 한다.  
 클래스명이 Hello3 이라면 (Hello3)clazz.newInstance()로 형변환을 해주면 된다.  
@@ -50,8 +52,8 @@ Hello3가 interface Hello 를 구현하는 클래스라면 (Hello)clazz.newInsta
 Class clazz에 클래스 정보들이 담긴다고 했는데 클래스의 필드와 메소드도 이를 통해 알아낼 수 있다.  
 이처럼 메모리에 로딩되어 있는 클래스의 정보를 프로그래머가 코딩하면서 알아낼 수 있게 하는 기능이 바로 자바의 리플렉션 기능이다.  
 clazz 변수를 이용해서 그 클래스가 가진 모든 메소드와 필드를 알아낼 수 있는데 예를 들어  
-```Method[] method = clazz.getMethod();
-Field[] field = claszz.getFields();```
+```Method[] method = clazz.getMethod();```   
+```Field[] field = claszz.getFields();```   
 이런식으로 메소드와 필드들을 배열로 가져올 수 있고 배열에 하나씩 접근해서 getName메소드를 사용하면 메소드의 이름과 필드 이름을 알아낼 수 있다.  
 이렇게 객체를 통해(위의 Method, Field 같은 - 이것들은 java.lang.reflect에 속하는 클래스들이다.) 메모리에 적재된 클래스의 정보를 이용해 분석하는 방법이 바로 자바의 Reflection 기능이다.  
 
