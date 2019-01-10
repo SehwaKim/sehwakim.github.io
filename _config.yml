@@ -1,99 +1,28 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-#
-# ,--------.      ,--.   ,--. ,--.
-# '--.  .--',---.  \  `.'  /,-'  '-.
-#    |  |  | .-. :  .'    \ '-.  .-'
-#    |  |  \   --. /  .'.  \  |  |
-#    `--'   `----''--'   '--' `--'
+show_drafts: true
 
-## Base settings ##
-url:
-baseurl: /
-title: My Blog
-description: 
+# Dependencies
+markdown:         redcarpet
+#highlighter:      pygments
 
-nav_lists:
-  - titles:
-      en: About
-      zh: 
-      zh-Hans: 
-      zh-Hant: 
-    url: /blog/about.html
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
 
-paths:
-  base: /blog
-  home: /
-  all:  /blog/all.html
-  rss:  /feed.xml
+# Setup
+title:            I was born ready
+tagline:          'A Jekyll theme'
+description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a>'
+#url:              https://sehwakim.github.io
+baseurl:          /
 
-## GitHub repository (if the site is hosted by GitHub) ##
-repository: sehwakim/study
-repository_tree: develop
-
-## Language & timezone ##
-lang: ko
-timezone: 
-
-## Author & social ##
 author:
-  name: "S. H. Kim"
-  email: sehwakm@gmail.com
-  # facebook:  #your Facebook username
-  twitter: 
-  github:  sehwakim
-  googleplus: 
-  weibo: 
-  douban: 
-  # linkedin:  #your Linkedin username
+  name:           'Sehwa Kim'
+  url:            https://github.com/sehwakim
 
-## Comment system (Disqus) ##
-disqus:
-  shortname: sehwakim-github-io
+paginate:         1
 
-## Google Analytics ##
-ga_tracking_id:
+# Custom vars
+version:          2.1.0
 
-# mathjax: true
-
-## Paginate ##
-paginate: 7
-paginate_path: /blog/page:num
-
-## Post excerpts ##
-excerpt_separator: <!--more-->
-excerpt_type: html # text | html
-
-## Build ##
-markdown: kramdown
-highlighter: rouge
-permalink: date
-
-exclude:
-  - CHANGELOG.md
-  - CHECKLIST.md
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README-*.md
-  - README.md
-  - gulpfile.js
-  - jekyll-text-theme.gemspec
-  - package-lock.json
-  - package.json
-  - /docs
-  - /node_modules
-  - /screenshots
-  - /test
-  - /vendor
-
-## Plugins ##
-plugins:
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-paginate
-  - jemoji
+github:
+  repo:           https://github.com/sehwakim

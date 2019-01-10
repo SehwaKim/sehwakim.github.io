@@ -1,2 +1,7 @@
-source 'http://gems.ruby-china.org/'
-gem 'github-pages', group: :jekyll_plugins
+source 'https://rubygems.org'
+group :jekyll_plugins do
+  gem 'jekyll-paginate'
+  gem 'jekyll-watch'
+  gem 'redcarpet'
+  gem 'rouge'
+end
