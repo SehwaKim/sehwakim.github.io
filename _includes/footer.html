@@ -1,0 +1,19 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div>
+      <ul class="contact-list">
+        <li class="p-name">
+          {%- if site.author -%}
+            written by {{ site.author | escape }}
+          {%- endif -%}
+          <span>&nbsp;&copy; {{ site.time | date: '%Y' }}. All rights reserved.</span>
+          </li>
+      </ul>
+    </div>
+
+  </div>
+
+</footer>
