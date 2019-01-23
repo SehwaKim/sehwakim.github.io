@@ -3,11 +3,20 @@ layout: post
 title: 자바 디자인 패턴의 이해 (Gof Design Pattern)
 ---
 
-아래의 강좌를 보면서 배운 내용 정리
+이 노트는 아래의 강좌를 보면서 배운 내용을 정리한 것임
 > [인프런 자바 디자인 패턴의 이해](https://www.inflearn.com/course/%EC%9E%90%EB%B0%94-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4/)
 
-Section 1. Strategy Pattern
----
+## 들어가기 전
+#### Gof Design Pattern이란?
+>"Gang of Four" design patterns describe how to solve recurring design problems to design flexible and reusable object-oriented software, that is, objects that are easier to implement, change, test, and reuse. (wikipedia)
+
+- *유연하고 재사용성 높은* 객체지향 프로그램을 만드는 게 목표인데
+- 그걸 방해하는 설계상의 문제를 반복적으로 만나게 된다.
+- 그 전형적인 문제들을 해결하기 위한 솔루션을 gof design pattern이 제시하는 거고
+- 이 디자인 패턴들을 적용하면 객체의 *구현*, *변경*, *테스트*, *재사용* 이 쉬워지게 된다.
+- 유지보수성Maintainability이 올라가는 것이다.
+
+## Section 1. Strategy Pattern
 >keyword: Interface, Delegation, Strategy Pattern
 
 #### Interface
@@ -76,3 +85,98 @@ Section 1. Strategy Pattern
 서블릿을 보면 HttpServlet의 메소드인 `void service(HttpServletRequest req, HttpServletResponse resp)` 메소드가 전형적인 템플릿 메소드이다. 템플릿 역할을 하는 service 안에 분기에 따라 doGet, doPost 등의 메소드들이 사용되고 있고 그 do 메소드들의 세부 구현은 HttpServlet을 상속한 subclass에게 맡기는 형태이다. 이것을 템플릿 메소드 패턴이라고 할 수 있다.
 템플릿 메소드 안의 step 들에 해당하는 메소드들은 요구사항 변경에 따라 언제든지 subclass에서 다르게 구현될 수 있다.
 하지만 전체 프로세스, 템플릿 자체가 변경된다면? 그런 일이 있을 수도 있기에 이 부분은 설계 단계부터 항상 염두해 두어야 한다.
+
+## Section 4. Factory Method Pattern
+>keyword: object creation, template method pattern
+
+#### What is Factory Method Pattern?
+- The factory method pattern is `a creational pattern`.
+- object 생성을 어떻게 할 지에 대한 패턴이다.
+- 그리고 object 생성을 위해 `팩토리 메소드`를 사용한다.
+- 어떤 객체를 생성할 때 직접 생성자를 호출하지 않고 팩토리 메소드를 호출한다는 말
+
+```java
+Item item = new HpPotion();
+item.use();
+
+Item item = new MpPotion();
+item.use();
+```
+이렇게 하지 않고
+```java
+ItemCreator creator;
+Item item;
+
+creator = new HpCreator();
+item = creator.create(); // 이 create()이 팩토리 메소드
+item.use();
+
+creator = new MpCreator();
+item = creator.create();
+item.use();
+```
+이렇게 객체를 생성한다. (Item객체의 *생성자역할* 인 ItemCreator가 있다.)
+여기서 두번째 코드가 첫번째 코드보다 더 유연하다고 할 수 있다.
+
+![W3sDesign_Factory_Method_Design_Pattern_UML](/assets/W3sDesign_Factory_Method_Design_Pattern_UML.jpg)
+
+#### 어떻게 팩토리 메소드를 통한 객체 생성이 더 유연한 방법인가?
+- 첫번째 코드처럼 생성자를 통해 객체들을 생성하면 Item 객체들이 추가, 수정, 삭제될 때 마다 전체 코드가 다시 수정되어야 한다.
+- 그래서 생성될 객체의 타입을 구체적으로 명시할 필요 없이 객체를 생성하고 싶다면 팩토리 메소드를 호출해서 그 메소드 안에서 구체적으로 지정된 객체가 생성되고 리턴되게 할 수 있다.
+- 그리고 팩토리 메소드에 객체생성을 맡기면 일련의 객체 생성 과정을 하나로 통일되게 묶을 수 있다.
+- 아이템 생성자와 아이템을 *추상화해서* 각각 추상클래스, 인터페이스로 두고 상속을 통해 각 세부 아이템에 맞게 구현하면 실제 아이템 생성 부분(클라이언트)의 코드는 다형성을 이용해서 작성될 수 있고 그렇게되면 여러가지 아이템 생성에 유연하게 대처할 수 있는 코드가 된다.
+- *객체 생성에 있어서도* 구조와 구현의 분리를 통해 결합도 낮은 유연한 프로그램 작성이 가능하게 하는 부분.
+
+#### 템플릿 메소드 패턴과의 연관관계는?
+- 팩토리 메소드 패턴에서 템플릿 메소드 패턴이 사용된다.
+- 위의 예시에서 팩토리 메소드였던 ItemCreator의 `create()` 메소드는 아이템 객체 생성 및 전처리, 후처리 작업 등을 수행할 수 있다 (DB에 아이템 생성 로그를 남긴다든지)
+- 그 처리 과정들(step)이 아이템별로 다르니까 template, skeleton에 해당하는 create()메소드는 템플릿 메소드로 하고 나머지 step들에 해당하는 메소드들은 아이템별 subclass에 구현을 맡기는 것이다. 즉, 템플릿 메소드 패턴이 그대로 쓰인다.
+- 요약하면, 팩토리 메소드 패턴은 객체 생성의 템플릿 메소드 패턴이라 할 수 있겠다.
+
+#### 팩토리 메소드 vs 팩토리 메소드 패턴
+-
+
+## Section 5. Singleton Pattern
+![1920px-Singleton_UML_class_diagram.svg](/assets/1920px-Singleton_UML_class_diagram.svg.png)
+*인스턴스 하나만 생성해야할 객체를 위한 패턴*
+
+## Section 6. Prototype Pattern
+>keyword: Cloneable
+
+- 프로토타입 패턴을 이용해서 복잡한 인스턴스를 복사할 수 있다.
+- **생산 비용이 높은 인스턴스** 를 복사를 통해서 쉽게 생성할 수 있도록 하는 패턴
+
+#### 인스턴스 생산 비용이 높은 경우
+1. 종류가 너무 많아서 클래스로 정리되지 않는 경우
+2. 클래스로부터 인스턴스 생성이 어려운 경우
+
+![900px-Prototype_UML.svg](/assets/900px-Prototype_UML.svg.png)
+
+```java
+// Prototype pattern
+public abstract class Prototype implements Cloneable {
+    public Prototype clone() throws CloneNotSupportedException{
+        return (Prototype) super.clone();
+    }
+}
+
+public class ConcretePrototype1 extends Prototype {
+    @Override
+    public Prototype clone() throws CloneNotSupportedException {
+        return (ConcretePrototype1)super.clone();
+    }
+}
+
+public class ConcretePrototype2 extends Prototype {
+    @Override
+    public Prototype clone() throws CloneNotSupportedException {
+        return (ConcretePrototype2)super.clone();
+    }
+}
+```
+자바에서는 Object의 clone()메소드를 통해 프로토타입 패턴을 지원한다.
+
+## Section 7. Builder Pattern
+>keyword:
+
+- 복잡한 단계가 있는 인스턴스 생성을 빌더 패턴을 통해서 구현할 수 있다.
